@@ -12,6 +12,14 @@ public class Tester{
       System.out.println("Correct: " + Arrays.toString(b));
     }
 
+    int[] c = new int[0];
+    Sorts.bubbleSort(c);
+    System.out.println(Arrays.toString(c));
+
+    int[] d = {1,2,3,4,5,6,7,8,9,10};
+    Sorts.bubbleSort(d);
+    System.out.println(Arrays.toString(d));
+
     int[] test = new int[20];
     int[] correct = new int[20];
 
