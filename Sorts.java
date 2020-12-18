@@ -16,4 +16,19 @@ public class Sorts{
       }
     }
   }
+
+  public static void selectionSort(int[] data){
+    for (int i = 0; i < data.length-1; i++){
+      int temp = data[i];
+      int index = i;
+      for (int j = i; j < data.length-1; j++){
+        if (data[j] < temp){
+          temp = data[j];
+          index = j;
+        }
+      }
+      data[index] = data[i];
+      data[i] = temp;
+    }
+  }
 }
