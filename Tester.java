@@ -23,6 +23,8 @@ public class Tester{
     int[] test = new int[20];
     int[] correct = new int[20];
 
+
+    int numError = 0;
     for (int i = 0; i < 10000; i++){
       Random rng = new Random();
       for(int j =  0; j < 20; j++){
@@ -37,8 +39,29 @@ public class Tester{
           System.out.println("ERROR");
           System.out.println("Bubble Sort: " + Arrays.toString(test));
           System.out.println("Correct: " + Arrays.toString(correct));
+          numError++;
       }
     }
-    System.out.println("All Good");
+
+    for (int i = 0; i < 10; i++){
+      Random rng1 = new Random();
+      for(int j =  0; j < 20; j++){
+        int temp1 = (rng1.nextInt() % 1000);
+        test[j] = temp1;
+        correct[j] = temp1;
+      }
+      Sorts.selectionSort(test);
+      Arrays.sort(correct);
+      if ((Arrays.toString(test)).equals(Arrays.toString(correct))){
+      }else{
+          System.out.println("ERROR");
+          System.out.println("Selection Sort: " + Arrays.toString(test));
+          System.out.println("Correct: " + Arrays.toString(correct));
+          numError++;
+      }
+    }
+    if (numError == 0){
+      System.out.println("All Good!");
+    }
   }
 }

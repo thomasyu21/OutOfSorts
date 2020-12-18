@@ -21,7 +21,7 @@ public class Sorts{
     for (int i = 0; i < data.length-1; i++){
       int temp = data[i];
       int index = i;
-      for (int j = i; j < data.length-1; j++){
+      for (int j = i; j < data.length; j++){
         if (data[j] < temp){
           temp = data[j];
           index = j;
