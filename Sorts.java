@@ -31,4 +31,18 @@ public class Sorts{
       data[i] = temp;
     }
   }
+
+  public static void insertionSort(int[] data){
+    for (int i = 0; i < data.length; i++){
+      int temp = data[i];
+      int index = i;
+      int j = i-1;
+      while (j >= 0 && temp < data[j]){
+        data[j+1] = data[j];
+        index--;
+        j--;
+      }
+      data[index] = temp;
+    }
+  }
 }

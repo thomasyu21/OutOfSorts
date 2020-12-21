@@ -20,14 +20,14 @@ public class Tester{
     Sorts.bubbleSort(d);
     System.out.println(Arrays.toString(d));
 
-    int[] test = new int[20];
-    int[] correct = new int[20];
+    int[] test = new int[2000];
+    int[] correct = new int[2000];
 
 
     int numError = 0;
-    for (int i = 0; i < 10000; i++){
+    for (int i = 0; i < 1000; i++){
       Random rng = new Random();
-      for(int j =  0; j < 20; j++){
+      for(int j =  0; j < 2000; j++){
         int temp = (rng.nextInt() % 1000);
         test[j] = temp;
         correct[j] = temp;
@@ -43,9 +43,9 @@ public class Tester{
       }
     }
 
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 1000; i++){
       Random rng1 = new Random();
-      for(int j =  0; j < 20; j++){
+      for(int j =  0; j < 2000; j++){
         int temp1 = (rng1.nextInt() % 1000);
         test[j] = temp1;
         correct[j] = temp1;
@@ -60,6 +60,26 @@ public class Tester{
           numError++;
       }
     }
+
+
+    for (int i = 0; i < 10; i++){
+      Random rng2 = new Random();
+      for(int j =  0; j < 5; j++){
+        int temp1 = (rng2.nextInt() % 100);
+        test[j] = temp1;
+        correct[j] = temp1;
+      }
+      Sorts.insertionSort(test);
+      Arrays.sort(correct);
+      if ((Arrays.toString(test)).equals(Arrays.toString(correct))){
+      }else{
+          System.out.println("ERROR");
+          System.out.println("Insertion Sort: " + Arrays.toString(test));
+          System.out.println("Correct: " + Arrays.toString(correct));
+          numError++;
+      }
+    }
+
     if (numError == 0){
       System.out.println("All Good!");
     }
